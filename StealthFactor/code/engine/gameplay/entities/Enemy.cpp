@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <pugixml/pugixml.hpp>
+#include <engine/gameplay/EntityContext.hpp>
 #include <engine/gameplay/GameplayManager.hpp>
 #include <engine/gameplay/entities/Player.hpp>
 
@@ -12,7 +13,8 @@ namespace engine
 	{
 		namespace entities
 		{
-			Enemy::Enemy(const std::string& archetypeName)
+			Enemy::Enemy(EntityContext &context, const std::string &archetypeName)
+				: Character{ context }
 			{
 				loadArchetype(archetypeName);
 			}
@@ -36,7 +38,7 @@ namespace engine
 						}
 						else
 						{
-							gameplay::Manager::getInstance().gameOver();
+							context.entityListener.gameOver();
 						}
 					}
 					else
