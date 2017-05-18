@@ -9,7 +9,7 @@ namespace engine
 		struct ShapeListInstance
 		{
 			ShapeList shapeList;
-			sf::Transform transform;
+			sf::Transform matrix;
 		};
 	}
 }

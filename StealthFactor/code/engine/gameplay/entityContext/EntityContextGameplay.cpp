@@ -20,7 +20,7 @@ namespace engine
 			_entityListener.gameOver();
 		}
 
-		const entities::Player& EntityContextGameplay::getPlayer() const
+		const components::Player& EntityContextGameplay::getPlayer() const
 		{
 			return _entityListener.getPlayer();
 		}

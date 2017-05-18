@@ -20,9 +20,9 @@ namespace engine
 			_manager.destroyShapeListInstance(id);
 		}
 
-		void EntityContextGraphics::setShapeListInstanceTransform(graphics::ShapeListId id, const sf::Transform& transform)
+		void EntityContextGraphics::setShapeListInstanceMatrix(graphics::ShapeListId id, const sf::Transform& matrix)
 		{
-			_manager.setShapeListInstanceTransform(id, transform);
+			_manager.setShapeListInstanceMatrix(id, matrix);
 		}
 	}
 }

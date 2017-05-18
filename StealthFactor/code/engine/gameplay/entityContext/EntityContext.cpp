@@ -11,24 +11,44 @@ namespace engine
 			, _physics{ physicsManager }
 		{}
 
-		EntityContextGameplay& EntityContext::gameplay()
+		EntityContextGameplay& EntityContext::getGameplay()
 		{
 			return _gameplay;
 		}
 
-		EntityContextGraphics& EntityContext::graphics()
+		const EntityContextGameplay& EntityContext::getGameplay() const
+		{
+			return const_cast<EntityContext*>(this)->getGameplay();
+		}
+
+		EntityContextGraphics& EntityContext::getGraphics()
 		{
 			return _graphics;
 		}
 
-		EntityContextInput& EntityContext::input()
+		const EntityContextGraphics& EntityContext::getGraphics() const
+		{
+			return const_cast<EntityContext*>(this)->getGraphics();
+		}
+
+		EntityContextInput& EntityContext::getInput()
 		{
 			return _input;
 		}
 
-		EntityContextPhysics& EntityContext::physics()
+		const EntityContextInput& EntityContext::getInput() const
+		{
+			return const_cast<EntityContext*>(this)->getInput();
+		}
+
+		EntityContextPhysics& EntityContext::getPhysics()
 		{
 			return _physics;
+		}
+
+		const EntityContextPhysics& EntityContext::getPhysics() const
+		{
+			return const_cast<EntityContext*>(this)->getPhysics();
 		}
 	}
 }

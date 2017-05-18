@@ -10,9 +10,9 @@ namespace engine
 			: _manager{ manager }
 		{}
 
-		physics::CollisionVolumeId EntityContextPhysics::createCollisionBox(Entity* entity, float width, float height)
+		physics::CollisionVolumeId EntityContextPhysics::createCollisionBox(const Entity& entity)
 		{
-			return _manager.createCollisionBox(entity, width, height);
+			return _manager.createCollisionBox(entity);
 		}
 
 		void EntityContextPhysics::destroyCollisionVolume(physics::CollisionVolumeId id)
@@ -25,7 +25,12 @@ namespace engine
 			_manager.setCollisionVolumePosition(id, position);
 		}
 
-		std::set<Entity*> EntityContextPhysics::getCollisionsWith(physics::CollisionVolumeId id) const
+		void EntityContextPhysics::setCollisionBoxSize(physics::CollisionVolumeId id, const sf::Vector2f& size)
+		{
+			_manager.setCollisionBoxSize(id, size);
+		}
+
+		physics::EntitySet EntityContextPhysics::getCollisionsWith(physics::CollisionVolumeId id) const
 		{
 			return _manager.getCollisionsWith(id);
 		}

@@ -8,7 +8,7 @@ namespace engine
 	{
 		class EntityListener;
 
-		namespace entities
+		namespace components
 		{
 			class Player;
 		}
@@ -20,7 +20,7 @@ namespace engine
 
 			void loadNextMap();
 			void gameOver();
-			const entities::Player& getPlayer() const;
+			const components::Player& getPlayer() const;
 
 		private:
 			EntityListener& _entityListener;

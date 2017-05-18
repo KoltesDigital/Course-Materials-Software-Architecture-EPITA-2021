@@ -14,10 +14,17 @@ namespace engine
 		public:
 			EntityContext(graphics::Manager& graphicsManager, input::Manager& inputManager, physics::Manager& physicsManager, EntityListener& entityListener);
 
-			EntityContextGameplay& gameplay();
-			EntityContextGraphics& graphics();
-			EntityContextInput& input();
-			EntityContextPhysics& physics();
+			EntityContextGameplay& getGameplay();
+			const EntityContextGameplay& getGameplay() const;
+
+			EntityContextGraphics& getGraphics();
+			const EntityContextGraphics& getGraphics() const;
+
+			EntityContextInput& getInput();
+			const EntityContextInput& getInput() const;
+
+			EntityContextPhysics& getPhysics();
+			const EntityContextPhysics& getPhysics() const;
 
 		private:
 			EntityContextGameplay _gameplay;

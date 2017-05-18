@@ -21,7 +21,7 @@ namespace engine
 			graphics::ShapeListId createShapeListInstance(const std::string& name);
 			void destroyShapeListInstance(graphics::ShapeListId id);
 
-			void setShapeListInstanceTransform(graphics::ShapeListId id, const sf::Transform& transform);
+			void setShapeListInstanceMatrix(graphics::ShapeListId id, const sf::Transform& transform);
 
 		private:
 			graphics::Manager& _manager;
