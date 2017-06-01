@@ -10,12 +10,12 @@ namespace engine
 		class AreaComputer : public ShapeDescriptorVisitor
 		{
 		public:
-			void circle(CircleDescriptor &circleDescriptor) override
+			void circle(CircleDescriptor& circleDescriptor) override
 			{
 				_area += (float)M_PI * circleDescriptor.radius * circleDescriptor.radius;
 			}
 
-			void rectangle(RectangleDescriptor &rectangleDescriptor)
+			void rectangle(RectangleDescriptor& rectangleDescriptor)
 			{
 				_area += rectangleDescriptor.width * rectangleDescriptor.height;
 			}
@@ -26,7 +26,7 @@ namespace engine
 			}
 
 		private:
-			float _area{0.f};
+			float _area{ 0.f };
 		};
 
 		class ShapeListDescriptorTest : public ::testing::Test
@@ -42,14 +42,14 @@ namespace engine
 
 		TEST_F(ShapeListDescriptorTest, Load)
 		{
-			auto &shapeDescriptors = descriptor.getShapeDescriptors();
+			auto& shapeDescriptors = descriptor.getShapeDescriptors();
 			EXPECT_EQ((std::size_t)2, shapeDescriptors.size());
 		}
 
 		TEST_F(ShapeListDescriptorTest, Visitor)
 		{
 			AreaComputer computer;
-			for (auto &shapeDescriptor : descriptor.getShapeDescriptors())
+			for (auto& shapeDescriptor : descriptor.getShapeDescriptors())
 			{
 				shapeDescriptor->accept(computer);
 			}
