@@ -76,8 +76,8 @@ namespace engine
 			{
 				Init()
 				{
-					value.registerClass<frontend::prefabComponents::Camera>("camera");
-					value.registerClass<frontend::prefabComponents::Renderer>("renderer");
+					value.registerClass<frontend::prefabComponents::Camera>();
+					value.registerClass<frontend::prefabComponents::Renderer>();
 				}
 			} init;
 		};
@@ -94,9 +94,22 @@ namespace engine
 		}
 
 		template <>
+		std::string getClassName<frontend::PrefabComponent>()
+		{
+			assert(false);
+			return "";
+		}
+
+		template <>
 		void serialize<frontend::prefabComponents::Camera>(frontend::prefabComponents::Camera& camera, serialization::Serializer& serializer)
 		{
 			serialize(static_cast<frontend::PrefabComponent&>(camera), serializer);
+		}
+
+		template <>
+		std::string getClassName<frontend::prefabComponents::Camera>()
+		{
+			return "camera";
 		}
 
 		template <>
@@ -104,6 +117,12 @@ namespace engine
 		{
 			serialize(static_cast<frontend::PrefabComponent&>(renderer), serializer);
 			serializer.declare("shapelist", renderer.shapelistName);
+		}
+
+		template <>
+		std::string getClassName<frontend::prefabComponents::Renderer>()
+		{
+			return "renderer";
 		}
 
 		template <>
