@@ -11,12 +11,12 @@ namespace engine
 		class ShapeListInstantiater : public ShapeDescriptorVisitor
 		{
 		public:
-			ShapeListInstantiater(ShapeList::Shapes &shapes)
+			ShapeListInstantiater(ShapeList::Shapes& shapes)
 				: _shapes{ shapes }
 			{
 			}
 
-			void circle(CircleDescriptor &circleDescriptor) override
+			void circle(CircleDescriptor& circleDescriptor) override
 			{
 				auto shape{ new sf::CircleShape{ circleDescriptor.radius } };
 				shape->setOrigin(circleDescriptor.radius, circleDescriptor.radius);
@@ -24,7 +24,7 @@ namespace engine
 				processShape(circleDescriptor, shape);
 			}
 
-			void rectangle(RectangleDescriptor &rectangleDescriptor) override
+			void rectangle(RectangleDescriptor& rectangleDescriptor) override
 			{
 				auto shape{ new sf::RectangleShape{ sf::Vector2f{ rectangleDescriptor.width, rectangleDescriptor.height } } };
 				shape->setOrigin(rectangleDescriptor.width / 2.f, rectangleDescriptor.height / 2.f);
@@ -33,9 +33,9 @@ namespace engine
 			}
 
 		private:
-			ShapeList::Shapes &_shapes;
+			ShapeList::Shapes& _shapes;
 
-			void processShape(ShapeDescriptor &shapeDescriptor, sf::Shape *shape)
+			void processShape(ShapeDescriptor& shapeDescriptor, sf::Shape* shape)
 			{
 				shape->setPosition(shapeDescriptor.x, shapeDescriptor.y);
 				shape->setFillColor(shapeDescriptor.fillColor);
@@ -46,7 +46,7 @@ namespace engine
 			}
 		};
 
-		ShapeList::ShapeList(ShapeListDescriptor &descriptor)
+		ShapeList::ShapeList(const ShapeListDescriptor& descriptor)
 		{
 			ShapeListInstantiater instantiater{ _shapes };
 			descriptor.visit(instantiater);

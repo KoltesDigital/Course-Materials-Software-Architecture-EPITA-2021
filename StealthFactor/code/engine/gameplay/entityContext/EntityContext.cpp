@@ -4,12 +4,23 @@ namespace engine
 {
 	namespace gameplay
 	{
-		EntityContext::EntityContext(graphics::Manager& graphicsManager, input::Manager& inputManager, physics::Manager& physicsManager, EntityListener& entityListener)
-			: _gameplay{ entityListener }
+		EntityContext::EntityContext(assets::Manager& assetManager, graphics::Manager& graphicsManager, input::Manager& inputManager, physics::Manager& physicsManager, EntityListener& entityListener)
+			: _assets{ assetManager }
+			, _gameplay{ entityListener }
 			, _graphics{ graphicsManager }
 			, _input{ inputManager }
 			, _physics{ physicsManager }
 		{}
+
+		EntityContextAssets& EntityContext::getAssets()
+		{
+			return _assets;
+		}
+
+		const EntityContextAssets& EntityContext::getAssets() const
+		{
+			return const_cast<EntityContext*>(this)->getAssets();
+		}
 
 		EntityContextGameplay& EntityContext::getGameplay()
 		{

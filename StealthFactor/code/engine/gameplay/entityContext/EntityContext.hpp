@@ -1,5 +1,6 @@
 #pragma once
 
+#include <engine/gameplay/entityContext/EntityContextAssets.hpp>
 #include <engine/gameplay/entityContext/EntityContextGameplay.hpp>
 #include <engine/gameplay/entityContext/EntityContextGraphics.hpp>
 #include <engine/gameplay/entityContext/EntityContextInput.hpp>
@@ -12,7 +13,10 @@ namespace engine
 		class EntityContext
 		{
 		public:
-			EntityContext(graphics::Manager& graphicsManager, input::Manager& inputManager, physics::Manager& physicsManager, EntityListener& entityListener);
+			EntityContext(assets::Manager& assetManager, graphics::Manager& graphicsManager, input::Manager& inputManager, physics::Manager& physicsManager, EntityListener& entityListener);
+
+			EntityContextAssets& getAssets();
+			const EntityContextAssets& getAssets() const;
 
 			EntityContextGameplay& getGameplay();
 			const EntityContextGameplay& getGameplay() const;
@@ -27,6 +31,7 @@ namespace engine
 			const EntityContextPhysics& getPhysics() const;
 
 		private:
+			EntityContextAssets _assets;
 			EntityContextGameplay _gameplay;
 			EntityContextGraphics _graphics;
 			EntityContextInput _input;

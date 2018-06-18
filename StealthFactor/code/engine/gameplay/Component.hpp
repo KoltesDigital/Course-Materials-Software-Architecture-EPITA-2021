@@ -6,6 +6,7 @@ namespace engine
 	{
 		class Entity;
 
+		class EntityContextAssets;
 		class EntityContextGameplay;
 		class EntityContextGraphics;
 		class EntityContextInput;
@@ -24,6 +25,9 @@ namespace engine
 
 		protected:
 			Component(Entity& entity);
+
+			EntityContextAssets& getAssets();
+			const EntityContextAssets& getAssets() const;
 
 			EntityContextGameplay& getGameplay();
 			const EntityContextGameplay& getGameplay() const;

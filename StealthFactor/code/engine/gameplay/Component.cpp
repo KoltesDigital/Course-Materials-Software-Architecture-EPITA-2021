@@ -30,6 +30,16 @@ namespace engine
 			return const_cast<Component*>(this)->getEntity();
 		}
 
+		EntityContextAssets& Component::getAssets()
+		{
+			return getEntity().getContext().getAssets();
+		}
+
+		const EntityContextAssets& Component::getAssets() const
+		{
+			return const_cast<Component*>(this)->getAssets();
+		}
+
 		EntityContextGameplay& Component::getGameplay()
 		{
 			return getEntity().getContext().getGameplay();
