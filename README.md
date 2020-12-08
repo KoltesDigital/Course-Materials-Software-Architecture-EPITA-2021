@@ -37,9 +37,10 @@ In order to simplify installation of the project, the repository contains parts 
 Although the code should support multiple platforms, only precompiled libraries for Windows are provided.
 
 1. [cli.cpp](https://github.com/KoltesDigital/cli.cpp), a CLI argument parser (header-only)
-2. [ODE](http://www.ode.org/), a physics engine
-3. [pugixml](http://pugixml.org/), an XML parser (header-only)
-4. [SFML](https://www.sfml-dev.org/), a small multimedia framework
+2. [GoogleTest](https://github.com/google/googletest), a test framework
+3. [ODE](http://www.ode.org/), a physics engine
+4. [pugixml](http://pugixml.org/), an XML parser (header-only)
+5. [SFML](https://www.sfml-dev.org/), a small multimedia framework
 
 ## Session #1
 

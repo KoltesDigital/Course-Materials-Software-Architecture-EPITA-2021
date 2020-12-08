@@ -7,6 +7,7 @@ This Source Code Form is subject to the terms of the Mozilla Public License, v. 
 This license applies to all files in this repository, except files under the _StealthFactor/dep_ directory, which are external projects with their own licenses:
 
 1. cli.cpp: [MIT License](https://opensource.org/licenses/MIT)
-2. ODE: [BSD-style License](https://bitbucket.org/odedevs/ode/src/master/LICENSE-BSD.TXT) or [LPGL v2.1 License](https://opensource.org/licenses/LGPL-2.1)
-3. pugixml: [MIT License](https://github.com/zeux/pugixml/blob/master/LICENSE.md)
-4. SFML: [MIT-style License](https://github.com/SFML/SFML/blob/master/license.md)
+2. GoogleTest: [BSD 3-Clause "New" or "Revised" License](https://github.com/google/googletest/blob/master/LICENSE)
+3. ODE: [BSD-style License](https://bitbucket.org/odedevs/ode/src/master/LICENSE-BSD.TXT) or [LPGL v2.1 License](https://opensource.org/licenses/LGPL-2.1)
+4. pugixml: [MIT License](https://github.com/zeux/pugixml/blob/master/LICENSE.md)
+5. SFML: [MIT-style License](https://github.com/SFML/SFML/blob/master/license.md)
