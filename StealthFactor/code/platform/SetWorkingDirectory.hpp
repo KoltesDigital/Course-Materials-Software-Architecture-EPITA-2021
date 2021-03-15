@@ -2,5 +2,5 @@
 
 namespace platform
 {
-	bool SetWorkingDirectory(const char *path);
+	bool SetWorkingDirectory(const char* path);
 }

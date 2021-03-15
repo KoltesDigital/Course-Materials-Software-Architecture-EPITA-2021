@@ -4,7 +4,7 @@
 
 namespace platform
 {
-	bool SetWorkingDirectory(const char *path)
+	bool SetWorkingDirectory(const char* path)
 	{
 		wchar_t wPath[4096];
 		MultiByteToWideChar(CP_ACP, 0, path, -1, wPath, 4096);
