@@ -46,3 +46,15 @@ Although the code should support multiple platforms, only precompiled libraries 
 - Why do we need architecture and code quality anyway?
 - Architecture principle: rely on lower level, cannot access to higher level.
 - Overview of a typical game engine architecture.
+ 
+## Session #2
+
+- Dependency cycles to be avoided.
+- Singletons can facilitate architecture breaches.
+- Division of responsibilities.
+- Interfaces to break dependency cycles.
+- Dependency injection.
+- Dependency inversion.
+- pImpl.
+- void\*: C-style pointer to user data.
+- Interface with opaque structures through handlers.
