@@ -13,7 +13,7 @@ namespace engine
 	{
 		namespace entities
 		{
-			Enemy::Enemy(EntityContext &context, const std::string &archetypeName)
+			Enemy::Enemy(EntityContext& context, const std::string& archetypeName)
 				: Character{ context }
 			{
 				loadArchetype(archetypeName);

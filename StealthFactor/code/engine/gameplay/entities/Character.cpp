@@ -10,7 +10,7 @@ namespace engine
 	{
 		namespace entities
 		{
-			Character::Character(EntityContext &context)
+			Character::Character(EntityContext& context)
 				: Entity{ context }
 			{
 				_collisionGeomId = dCreateBox(context.physicsManager.getSpaceId(), 0.f, 0.f, 0.f);
