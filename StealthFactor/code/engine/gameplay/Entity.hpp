@@ -6,7 +6,7 @@ namespace engine
 {
 	namespace gameplay
 	{
-		struct EntityContext;
+		class EntityContext;
 
 		class Entity
 		{

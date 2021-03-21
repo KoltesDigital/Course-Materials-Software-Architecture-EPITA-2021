@@ -6,8 +6,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <engine/graphics/ViewProvider.hpp>
 #include <engine/gameplay/Entity.hpp>
-#include <engine/gameplay/EntityContext.hpp>
 #include <engine/gameplay/EntityListener.hpp>
+#include <engine/gameplay/entityContext/EntityContext.hpp>
 
 namespace engine
 {

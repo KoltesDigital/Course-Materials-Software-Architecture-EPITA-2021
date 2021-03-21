@@ -1,10 +1,8 @@
 #include "Target.hpp"
 
 #include <cassert>
-#include <engine/gameplay/EntityContext.hpp>
+#include <engine/gameplay/entityContext/EntityContext.hpp>
 #include <engine/gameplay/GameplayManager.hpp>
-#include <engine/graphics/GraphicsManager.hpp>
-#include <engine/physics/PhysicsManager.hpp>
 
 namespace engine
 {
@@ -15,17 +13,17 @@ namespace engine
 			Target::Target(EntityContext& context)
 				: Entity{ context }
 			{
-				_shapeListId = _context.graphicsManager.createShapeListInstance("target");
+				_shapeListId = _context.graphics().createShapeListInstance("target");
 				assert(_shapeListId);
 
-				_collisionVolumeId = _context.physicsManager.createCollisionBox(this, gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f);
+				_collisionVolumeId = _context.physics().createCollisionBox(this, gameplay::Manager::CELL_SIZE * 0.9f, gameplay::Manager::CELL_SIZE * 0.9f);
 				assert(_collisionVolumeId);
 			}
 
 			Target::~Target()
 			{
-				_context.graphicsManager.destroyShapeListInstance(_shapeListId);
-				_context.physicsManager.destroyCollisionVolume(_collisionVolumeId);
+				_context.graphics().destroyShapeListInstance(_shapeListId);
+				_context.physics().destroyCollisionVolume(_collisionVolumeId);
 			}
 
 			void Target::update()
@@ -35,7 +33,7 @@ namespace engine
 
 			void Target::propagateTransform()
 			{
-				_context.graphicsManager.setShapeListInstanceTransform(_shapeListId, getTransform());
+				_context.graphics().setShapeListInstanceTransform(_shapeListId, getTransform());
 
 				auto& position = getPosition();
 				dGeomSetPosition(_collisionVolumeId, position.x, position.y, 0);

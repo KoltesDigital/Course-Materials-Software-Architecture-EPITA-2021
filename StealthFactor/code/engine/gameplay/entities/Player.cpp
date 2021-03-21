@@ -5,12 +5,9 @@
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/Shape.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
-#include <engine/input/InputManager.hpp>
-#include <engine/physics/PhysicsManager.hpp>
-#include <engine/gameplay/EntityContext.hpp>
 #include <engine/gameplay/GameplayManager.hpp>
 #include <engine/gameplay/entities/Target.hpp>
-#include <engine/Engine.hpp>
+#include <engine/gameplay/entityContext/EntityContext.hpp>
 
 namespace engine
 {
@@ -21,7 +18,7 @@ namespace engine
 			Player::Player(EntityContext& context)
 				: Character{ context }
 			{
-				_shapeListId = _context.graphicsManager.createShapeListInstance("player");
+				_shapeListId = _context.graphics().createShapeListInstance("player");
 				assert(_shapeListId);
 			}
 
@@ -31,28 +28,28 @@ namespace engine
 				auto position = getPosition();
 				float rotation = getRotation();
 
-				if (_context.inputManager.isKeyJustPressed(sf::Keyboard::Left))
+				if (_context.input().isKeyJustPressed(sf::Keyboard::Left))
 				{
 					_justMoved = true;
 					position.x -= gameplay::Manager::CELL_SIZE;
 					rotation = 180.f;
 				}
 
-				if (_context.inputManager.isKeyJustPressed(sf::Keyboard::Right))
+				if (_context.input().isKeyJustPressed(sf::Keyboard::Right))
 				{
 					_justMoved = true;
 					position.x += gameplay::Manager::CELL_SIZE;
 					rotation = 0.f;
 				}
 
-				if (_context.inputManager.isKeyJustPressed(sf::Keyboard::Up))
+				if (_context.input().isKeyJustPressed(sf::Keyboard::Up))
 				{
 					_justMoved = true;
 					position.y -= gameplay::Manager::CELL_SIZE;
 					rotation = -90.f;
 				}
 
-				if (_context.inputManager.isKeyJustPressed(sf::Keyboard::Down))
+				if (_context.input().isKeyJustPressed(sf::Keyboard::Down))
 				{
 					_justMoved = true;
 					position.y += gameplay::Manager::CELL_SIZE;
@@ -66,13 +63,13 @@ namespace engine
 					propagateTransform();
 				}
 
-				auto collisions = _context.physicsManager.getCollisionsWith(_collisionVolumeId);
+				auto collisions = _context.physics().getCollisionsWith(_collisionVolumeId);
 				for (auto& entity : collisions)
 				{
 					auto targetEntity = dynamic_cast<entities::Target*>(entity);
 					if (targetEntity)
 					{
-						_context.entityListener.loadNextMap();
+						_context.gameplay().loadNextMap();
 					}
 				}
 			}

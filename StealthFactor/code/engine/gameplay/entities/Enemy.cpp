@@ -3,8 +3,8 @@
 #include <iostream>
 #include <sstream>
 #include <pugixml/pugixml.hpp>
-#include <engine/gameplay/EntityContext.hpp>
 #include <engine/gameplay/GameplayManager.hpp>
+#include <engine/gameplay/entityContext/EntityContext.hpp>
 #include <engine/gameplay/entities/Player.hpp>
 #include <engine/graphics/GraphicsManager.hpp>
 
@@ -22,7 +22,7 @@ namespace engine
 
 			void Enemy::update()
 			{
-				auto& player = _context.entityListener.getPlayer();
+				auto& player = _context.gameplay().getPlayer();
 				if (player.hasJustMoved())
 				{
 					auto& playerPosition = player.getPosition();
@@ -39,7 +39,7 @@ namespace engine
 						}
 						else
 						{
-							_context.entityListener.gameOver();
+							_context.gameplay().gameOver();
 						}
 					}
 					else
@@ -63,7 +63,7 @@ namespace engine
 					auto xmlArchetype = doc.first_child();
 
 					std::string shapeListName = xmlArchetype.child_value("shapelist");
-					_shapeListId = _context.graphicsManager.createShapeListInstance(shapeListName);
+					_shapeListId = _context.graphics().createShapeListInstance(shapeListName);
 					assert(_shapeListId);
 
 					_visionRadius = std::stof(xmlArchetype.child_value("vision_radius"));
