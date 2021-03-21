@@ -58,3 +58,11 @@ Although the code should support multiple platforms, only precompiled libraries 
 - pImpl.
 - void\*: C-style pointer to user data.
 - Interface with opaque structures through handlers.
+ 
+## Session #3
+
+- RAII.
+- Ownership.
+- Smart pointers (std::unique_ptr, std::shared_ptr).
+- Move semantics.
+- Dissonance in naming and in responsibilities.
