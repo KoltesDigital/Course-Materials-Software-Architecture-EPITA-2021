@@ -47,7 +47,7 @@ Although the code should support multiple platforms, only precompiled libraries 
 - Why do we need architecture and code quality anyway?
 - Architecture principle: rely on lower level, cannot access to higher level.
 - Overview of a typical game engine architecture.
- 
+
 ## Session #2
 
 - Dependency cycles to be avoided.
@@ -59,7 +59,7 @@ Although the code should support multiple platforms, only precompiled libraries 
 - pImpl.
 - void\*: C-style pointer to user data.
 - Interface with opaque structures through handlers.
- 
+
 ## Session #3
 
 - RAII.
@@ -67,3 +67,11 @@ Although the code should support multiple platforms, only precompiled libraries 
 - Smart pointers (std::unique_ptr, std::shared_ptr).
 - Move semantics.
 - Dissonance in naming and in responsibilities.
+
+## Session #4
+
+- Specialization through inheritance.
+- Specialization through components, entity-component-system.
+- Camera system.
+- Separation between Model and View.
+- Visitor pattern.
