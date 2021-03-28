@@ -38,9 +38,10 @@ Although the code should support multiple platforms, only precompiled libraries 
 
 1. [cli.cpp](https://github.com/KoltesDigital/cli.cpp), a CLI argument parser (header-only)
 2. [GoogleTest](https://github.com/google/googletest), a test framework
-3. [ODE](http://www.ode.org/), a physics engine
-4. [pugixml](http://pugixml.org/), an XML parser (header-only)
-5. [SFML](https://www.sfml-dev.org/), a small multimedia framework
+3. [json](https://github.com/nlohmann/json), a JSON parser (header-only)
+4. [ODE](http://www.ode.org/), a physics engine
+5. [pugixml](http://pugixml.org/), an XML parser (header-only)
+6. [SFML](https://www.sfml-dev.org/), a small multimedia framework
 
 ## Session #1
 
