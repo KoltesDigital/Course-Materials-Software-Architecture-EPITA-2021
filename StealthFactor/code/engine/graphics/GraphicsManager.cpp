@@ -3,11 +3,11 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Window/Event.hpp>
 #include <engine/assets/AssetManager.hpp>
-#include <engine/input/InputManager.hpp>
+#include <engine/frontend/FrontendManager.hpp>
 #include <engine/graphics/Camera.hpp>
 #include <engine/graphics/ShapeListDescriptor.hpp>
 #include <engine/graphics/ShapeListInstance.hpp>
-#include <engine/gameplay/GameplayManager.hpp>
+#include <engine/input/InputManager.hpp>
 #include <engine/util/Assert.hpp>
 #include <engine/Engine.hpp>
 
@@ -15,8 +15,8 @@ namespace engine
 {
 	namespace graphics
 	{
-		Manager::Manager(assets::Manager& assetsManager, EventListener& eventListener)
-			: _assetsManager{ assetsManager }
+		Manager::Manager(assets::Manager& assetManager, EventListener& eventListener)
+			: _assetsManager{ assetManager }
 			, _eventListener{ eventListener }
 		{
 		}

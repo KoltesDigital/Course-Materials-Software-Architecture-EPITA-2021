@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<rows>5</rows>
+	<columns>5</columns>
+	<target>
+		<row>5</row>
+		<column>6</column>
+	</target>
+	<player>
+		<row>1</row>
+		<column>2</column>
+	</player>
+	<enemies>
+		<enemy>
+			<row>3</row>
+			<column>4</column>
+			<archetype>archetypes/boss.xml</archetype>
+		</enemy>
+	</enemies>
+</map>

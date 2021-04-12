@@ -2,19 +2,20 @@
 <map>
 	<rows>5</rows>
 	<columns>5</columns>
-	<elements>
-		<player>
-			<row>0</row>
-			<column>0</column>
-		</player>
-		<target>
-			<row>4</row>
-			<column>4</column>
-		</target>
+	<target>
+		<row>4</row>
+		<column>4</column>
+	</target>
+	<player>
+		<row>0</row>
+		<column>0</column>
+	</player>
+	<enemies>
 		<enemy>
-			<prefab>prefabs/guard.xml</prefab>
 			<row>2</row>
 			<column>2</column>
+			<archetype>archetypes/guard.xml</archetype>
 		</enemy>
-	</elements>
+	</enemies>
+	<next_map>maps/02_tutorial_guard.xml</next_map>
 </map>

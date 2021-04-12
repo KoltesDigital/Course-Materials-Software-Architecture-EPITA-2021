@@ -23,7 +23,7 @@ namespace engine
 		class Manager
 		{
 		public:
-			Manager(assets::Manager& assetsManager, EventListener& eventListener);
+			Manager(assets::Manager& assetManager, EventListener& eventListener);
 			~Manager();
 
 			bool setUp();

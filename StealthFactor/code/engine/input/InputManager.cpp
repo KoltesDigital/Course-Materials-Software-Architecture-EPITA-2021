@@ -7,6 +7,27 @@ namespace engine
 {
 	namespace input
 	{
+		void Manager::clear()
+		{
+			_justPressedKeys.clear();
+			_justReleasedKeys.clear();
+		}
+
+		void Manager::onKeyPressed(const sf::Event::KeyEvent& event)
+		{
+			_justPressedKeys.insert(event.code);
+		}
+
+		void Manager::onKeyReleased(const sf::Event::KeyEvent& event)
+		{
+			_justReleasedKeys.insert(event.code);
+		}
+
+		void Manager::setActive(bool active)
+		{
+			_active = active;
+		}
+
 		bool Manager::isKeyPressed(sf::Keyboard::Key key) const
 		{
 			if (!_active)
@@ -29,27 +50,6 @@ namespace engine
 				return false;
 
 			return _justReleasedKeys.find(key) != std::end(_justReleasedKeys);
-		}
-
-		void Manager::clear()
-		{
-			_justPressedKeys.clear();
-			_justReleasedKeys.clear();
-		}
-
-		void Manager::onKeyPressed(const sf::Event::KeyEvent& event)
-		{
-			_justPressedKeys.insert(event.code);
-		}
-
-		void Manager::onKeyReleased(const sf::Event::KeyEvent& event)
-		{
-			_justReleasedKeys.insert(event.code);
-		}
-
-		void Manager::setActive(bool active)
-		{
-			_active = active;
 		}
 	}
 }
